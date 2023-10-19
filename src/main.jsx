@@ -13,6 +13,10 @@ import Google from './Pages/Category/Google';
 import Sony from './Pages/Category/Sony';
 import Microsoft from './Pages/Category/Microsoft';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import AuthProvider from './ContextProvider/AuthContext';
+import PrivateRouteForLoginSignUp from './PrivateRoute/PrivateRouteForLoginSignUp';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -48,13 +52,25 @@ const router = createBrowserRouter([
         path: "/microsoft",
         element: <PrivateRouteForOthers><Microsoft></Microsoft></PrivateRouteForOthers>,
       },
+      {
+        path: "/login",
+        element: <PrivateRouteForLoginSignUp><Login></Login></PrivateRouteForLoginSignUp>,
+      },
+      {
+        path: "/register",
+        element: <PrivateRouteForLoginSignUp><Register></Register></PrivateRouteForLoginSignUp>,
+      },
+
     ],
   },
 ]);
 
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-  <RouterProvider router={router}></RouterProvider>
-  </React.StrictMode>,
-)
+    <AuthProvider>
+   
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
+  </React.StrictMode>
+);
