@@ -1,7 +1,7 @@
 import ReactPlayer from "react-player";
 import video1 from "../../Assets/samsung.webm";
 import video2 from "../../Assets/apple.mp4";
-import "./Home.css";
+
 import { useContext, useState } from "react";
 import { AuthContext } from "../../ContextProvider/AuthContext";
 

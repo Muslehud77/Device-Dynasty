@@ -24,7 +24,7 @@ export default function BrandBanners() {
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
-    <div className="container mx-auto rounded-xl overflow-hidden my-20">
+    <div className="container mx-auto rounded-xl overflow-hidden md:my-20">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

@@ -27,45 +27,86 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element:<Home></Home>
+        element: <Home></Home>,
       },
       {
         path: "/add-product",
-        element: <PrivateRouteForOthers><AddProduct></AddProduct></PrivateRouteForOthers>,
+        element: (
+          <PrivateRouteForOthers>
+            <AddProduct></AddProduct>
+          </PrivateRouteForOthers>
+        ),
       },
       {
         path: "/apple",
-        element: <PrivateRouteForOthers><Apple></Apple></PrivateRouteForOthers>,
+        loader: () => fetch("http://localhost:5000/apple"),
+        element: (
+          <PrivateRouteForOthers>
+            <Apple></Apple>
+          </PrivateRouteForOthers>
+        ),
       },
       {
         path: "/dji",
-        element: <PrivateRouteForOthers><Dji></Dji></PrivateRouteForOthers>,
+        loader: () => fetch("http://localhost:5000/dji"),
+        element: (
+          <PrivateRouteForOthers>
+            <Dji></Dji>
+          </PrivateRouteForOthers>
+        ),
       },
       {
         path: "/samsung",
-        element: <PrivateRouteForOthers><Samsung></Samsung></PrivateRouteForOthers>,
+        loader: () => fetch("http://localhost:5000/samsung"),
+        element: (
+          <PrivateRouteForOthers>
+            <Samsung></Samsung>
+          </PrivateRouteForOthers>
+        ),
       },
       {
         path: "/google",
-        element: <PrivateRouteForOthers><Google></Google></PrivateRouteForOthers>,
+        loader: () => fetch("http://localhost:5000/google"),
+        element: (
+          <PrivateRouteForOthers>
+            <Google></Google>
+          </PrivateRouteForOthers>
+        ),
       },
       {
         path: "/sony",
-        element: <PrivateRouteForOthers><Sony></Sony></PrivateRouteForOthers>,
+        loader: () => fetch("http://localhost:5000/sony"),
+        element: (
+          <PrivateRouteForOthers>
+            <Sony></Sony>
+          </PrivateRouteForOthers>
+        ),
       },
       {
         path: "/microsoft",
-        element: <PrivateRouteForOthers><Microsoft></Microsoft></PrivateRouteForOthers>,
+        loader: () => fetch("http://localhost:5000/microsoft"),
+        element: (
+          <PrivateRouteForOthers>
+            <Microsoft></Microsoft>
+          </PrivateRouteForOthers>
+        ),
       },
       {
         path: "/login",
-        element: <PrivateRouteForLoginSignUp><Login></Login></PrivateRouteForLoginSignUp>,
+        element: (
+          <PrivateRouteForLoginSignUp>
+            <Login></Login>
+          </PrivateRouteForLoginSignUp>
+        ),
       },
       {
         path: "/register",
-        element: <PrivateRouteForLoginSignUp><Register></Register></PrivateRouteForLoginSignUp>,
+        element: (
+          <PrivateRouteForLoginSignUp>
+            <Register></Register>
+          </PrivateRouteForLoginSignUp>
+        ),
       },
-
     ],
   },
 ]);
