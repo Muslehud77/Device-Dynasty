@@ -12,6 +12,7 @@ const [user,setUser] = useState(null)
 const [loading,setLoading] = useState(true)
 const [dark,setDark] = useState(false)
 const [cart,setCart] = useState([])
+const [name,setName] = useState('')
 
 document
   .querySelector("html")
@@ -45,6 +46,8 @@ useEffect(()=>{
     return ()=> unsubscribe()
 },[])
     const info = {
+        name,
+        setName,
      cart,
      setCart,
       user,

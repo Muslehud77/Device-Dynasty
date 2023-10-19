@@ -17,6 +17,7 @@ import AuthProvider from './ContextProvider/AuthContext';
 import PrivateRouteForLoginSignUp from './PrivateRoute/PrivateRouteForLoginSignUp';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import Home from './Pages/Home/Home';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
+      {
+        path: "/",
+        element:<Home></Home>
+      },
       {
         path: "/add-product",
         element: <PrivateRouteForOthers><AddProduct></AddProduct></PrivateRouteForOthers>,
