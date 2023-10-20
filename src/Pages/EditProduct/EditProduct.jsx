@@ -13,6 +13,9 @@ export default function EditProduct() {
   const { _id, brand, price, productType, name, rating, photo, description } =
     productToEdit[0];
 const {dark} = useContext(AuthContext)
+
+
+
   const addProduct = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -33,7 +36,7 @@ const {dark} = useContext(AuthContext)
       photo,
       details,
     };
-    console.log(product);
+  
 
     fetch(`http://localhost:5000/${brand}${_id}`, {
       method: "PUT",
@@ -107,7 +110,7 @@ const {dark} = useContext(AuthContext)
       </div>
       <div>
         <section className="p-6 dark:bg-gray-800 dark:text-gray-100">
-          <div className="container space-y-10 flex flex-col-reverse md:grid gap-6 mx-auto text-center lg:grid-cols-2 justify-center items-center xl:grid-cols-5">
+          <div className="container space-y-10 flex flex-col-reverse md:grid gap-6 mx-auto text-center lg:grid-cols-2 justify-center  xl:grid-cols-5">
             <div className="w-full px-6  rounded-md xl:col-span-3 dark:bg-gray-900">
               <form
                 onChange={handleChange}

@@ -7,21 +7,46 @@ import {FaShoppingCart} from 'react-icons/fa'
 import { useContext } from "react";
 import { AuthContext } from "../ContextProvider/AuthContext";
 import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 
 
 export default function Cart() {
-    const { cart, user , fetchCart} = useContext(AuthContext);
+    const { cart,  fetchCart,dark} = useContext(AuthContext);
   const [state, setState] = React.useState({
    
     right: false,
   });
 
- const amount = cart.reduce((base, c) => {
-   return base + c.price;
- }, 0);
 
- const total = parseFloat(amount).toFixed(2)
+
+  const amount = cart.reduce((base, c) => {
+    return base + parseFloat(c.price);
+  }, 0);
+
+ 
+const handleCheckOut = ()=>{
+  
+    fetch("http://localhost:5000/cart", {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if(data.deletedCount>0){
+            Swal.fire({
+              title: "Sweet!",
+              text: "Modal with a custom image.",
+              imageUrl: "https://unsplash.it/400/200",
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: "Custom image",
+            });
+           fetchCart()
+        }
+        console.log(data);
+      });
+}
+
  
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -36,7 +61,11 @@ export default function Cart() {
 
   const list = () => (
     <Box>
-      <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 dark:bg-gray-900 dark:text-gray-100">
+      <div
+        className={`flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 ${
+          dark && "bg-gray-900 text-gray-100"
+        }`}
+      >
         <h2 className="text-xl font-semibold">Your cart</h2>
         <ul className="flex flex-col divide-y divide-gray-700">
           {cart.length > 0 &&
@@ -45,7 +74,7 @@ export default function Cart() {
         <div className="space-y-1 text-right">
           <p>
             Total amount:
-            <span className="font-semibold">${total}</span>
+            <span className="font-semibold">${amount}</span>
           </p>
           <p className="text-sm dark:text-gray-400">
             Not including taxes and shipping costs
@@ -60,6 +89,7 @@ export default function Cart() {
             <span className="sr-only sm:not-sr-only">to shop</span>
           </button>
           <button
+            onClick={() => handleCheckOut()}
             type="button"
             className="px-6 py-2 border rounded-md dark:bg-violet-400 dark:text-gray-900 dark:border-violet-400"
           >

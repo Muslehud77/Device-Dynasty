@@ -17,7 +17,7 @@ export default function User() {
  
 
   return (
-    <div className="relative z-50">
+    <div className="relative z-[100]">
       <Dropdown>
         <MenuButton>
           <div className="avatar border-2">
@@ -26,7 +26,7 @@ export default function User() {
             </div>
           </div>
         </MenuButton>
-        <Menu slots={{ listbox: Listbox }}>
+        <Menu className="relative z-50" slots={{ listbox: Listbox }}>
           <MenuItem className="capitalize">
             {user.displayName ? user.displayName : name}
           </MenuItem>

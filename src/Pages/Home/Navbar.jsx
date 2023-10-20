@@ -52,7 +52,7 @@ const Navbar = () => {
 
     return (
       <header
-        className={`flex flex-wrap md:justify-start md:flex-nowrap relative z-20 w-full text-sm`}
+        className={`flex flex-wrap md:justify-start md:flex-nowrap relative z-50 w-full text-sm`}
       >
         <nav
           className={`mt-6 relative container w-full ${pathname !== '/' && 'rounded-full border-2'} mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:bg-gray-800 dark:border-gray-700`}
