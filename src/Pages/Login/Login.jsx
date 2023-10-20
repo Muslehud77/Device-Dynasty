@@ -6,13 +6,14 @@ import {FcGoogle} from 'react-icons/fc'
 import {SiFacebook} from 'react-icons/si'
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 const Login = () => {
     const { state } = useLocation();
     const navigate = useNavigate()
 
     const [errMsg,setErrMsg] = useState(null) 
     const [showPass,setShowPass] = useState(false)
-    const { googleLogin, facebookLogin, login, logout , user } =
+    const { googleLogin, facebookLogin, login, dark} =
       useContext(AuthContext);
 
     const handleSocialLogin = (social) =>{
@@ -20,6 +21,13 @@ const Login = () => {
         social()
         .then(res=>{
             navigate(`${state ?  state : '/'}`)
+            toast.success(`Welcome back! ${res.user.displayName}`, {
+              style: {
+                borderRadius: "10px",
+                background: `${dark ? "black" : "white"}`,
+                color: `${!dark ? "black" : "white"}`,
+              },
+            });
             console.log(res.user)
         }).catch(err=>{
             console.log(err)
@@ -37,10 +45,27 @@ const Login = () => {
         .then(res=>{
             form.reset()
             navigate(`${state ? state : "/"}`)
+            toast.success(`Welcome back! ${res.user.displayName}`, {
+              style: {
+                borderRadius: "10px",
+                background: `${dark? 'black':'white'}`,
+                color: `${!dark ? "black" : "white"}`,
+              },
+            });
             console.log(res.user)
         }).catch(err=>{
             console.log(err.message)
             if(err.message === 'Firebase: Error (auth/invalid-login-credentials).'){
+                toast.error(
+                  "Email or password doesn't match please try again.",
+                  {
+                    style: {
+                      borderRadius: "10px",
+                      background: `${dark ? "black" : "white"}`,
+                      color: `${!dark ? "black" : "white"}`,
+                    },
+                  }
+                );
                 setErrMsg("Email or password doesn't match please try again." )
             }
         })
@@ -64,10 +89,10 @@ const Login = () => {
             </div>
 
             <p className="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
-              Welcome back!
+              Welcome back!!
             </p>
 
-            <a
+           <a
               onClick={() => handleSocialLogin(googleLogin)}
               className="flex hover:cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
             >

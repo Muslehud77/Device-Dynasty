@@ -1,9 +1,10 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import {  useNavigate } from "react-router-dom";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import welcome2 from '../../Assets/welcome2.svg'
 import { updateProfile } from "firebase/auth";
 import { AuthContext } from "../../ContextProvider/AuthContext";
+import toast from "react-hot-toast";
 
 const specialCharacter = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
 
@@ -31,25 +32,53 @@ const Register = () => {
     console.log(displayName, photoURL, email);
     if (password.length < 6) {
       setErr("Password must be at least 6 characters!");
+      toast.error(`Password must be at least 6 characters!`, {
+        style: {
+          borderRadius: "10px",
+          background: `${dark ? "black" : "white"}`,
+          color: `${dark ? "white" : "black"}`,
+        },
+      });
       return;
     }
 
     if (!/[A-Z]/.test(password)) {
       setErr("Password must contain at least 1 upper case letter!");
+      toast.error(`Password must contain at least 1 upper case letter!`, {
+        style: {
+          borderRadius: "10px",
+          background: `${dark ? "black" : "white"}`,
+          color: `${dark ? "white" : "black"}`,
+        },
+      });
       return;
     }
 
     if (!specialCharacter.test(password)) {
       setErr("Password should have at least 1 special character!");
+      toast.error(`Password should have at least 1 special character!`, {
+        style: {
+          borderRadius: "10px",
+          background: `${dark ? "black" : "white"}`,
+          color: `${dark ? "white" : "black"}`,
+        },
+      });
       return;
     }
 
     if (!/\d/.test(password)) {
       setErr("Password must contain at least 1 number!");
+      toast.error(`Password must contain at least 1 number!`, {
+        style: {
+          borderRadius: "10px",
+          background: `${dark ? "black" : "white"}`,
+          color: `${dark ? "white" : "black"}`,
+        },
+      });
       return;
     }
 
-    const user = { displayName, email, photoURL };
+    
 
     register(email, password)
       .then((res) => {
@@ -58,6 +87,13 @@ const Register = () => {
           photoURL,
         });
         setName(displayName)
+         toast.success(`Welcome! ${displayName}`, {
+           style: {
+             borderRadius: "10px",
+             background: `${dark ? "black" : "white"}`,
+             color:`${!dark ? "black" : "white"}`,
+           },
+         });
         navigate('/')
 
       })

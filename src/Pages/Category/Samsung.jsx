@@ -90,7 +90,7 @@ const Samsung = () => {
       </Swiper>
       <div className="flex flex-col justify-center items-center my-10">
         <h4 className="text-4xl font-semibold my-10">Available Phones</h4>
-        <div className="md:grid grid-cols-4 gap-5">
+        <div className="md:grid  md:grid-cols-2 lg:grid-cols-4 gap-5">
           {phones.map((phone, idx) => (
             <Card
               key={idx}
@@ -103,7 +103,7 @@ const Samsung = () => {
       </div>
       <div className="flex flex-col justify-center items-center my-10">
         <h4 className="text-4xl font-semibold my-10">Available Watches</h4>
-        <div className="md:grid grid-cols-4 gap-5">
+        <div className="md:grid  md:grid-cols-2 lg:grid-cols-4 gap-5">
           {watches.map((watch, idx) => (
             <Card
               key={idx}
@@ -116,7 +116,7 @@ const Samsung = () => {
       </div>
       <div className="flex flex-col justify-center items-center my-10">
         <h4 className="text-4xl font-semibold my-10">Available Laptops</h4>
-        <div className="md:grid grid-cols-4 gap-5">
+        <div className="md:grid  md:grid-cols-2 lg:grid-cols-4 gap-5">
           {laptops.map((laptop, idx) => (
             <Card
               key={idx}
@@ -129,7 +129,7 @@ const Samsung = () => {
       </div>
       <div className="flex flex-col justify-center items-center my-10">
         <h4 className="text-4xl font-semibold my-10">Available Tablets</h4>
-        <div className="md:grid grid-cols-4 gap-5">
+        <div className="md:grid  md:grid-cols-2 lg:grid-cols-4 gap-5">
           {tablets.map((tablet, idx) => (
             <Card
               key={idx}

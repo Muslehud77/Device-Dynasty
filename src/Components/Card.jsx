@@ -48,10 +48,10 @@ const Card = ({product,products,setProducts}) => {
       }
     
     return (
-      <div>
-        <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
+      <div className="mb-5 ">
+        <div className="flex flex-col items-center justify-center w-80  mx-auto">
           <div
-            className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
+            className="w-full h-64 bg-gray-300 bg-center  bg-cover  rounded-lg shadow-md"
             style={{ backgroundImage: `url(${photo})` }}
           ></div>
 
@@ -59,7 +59,7 @@ const Card = ({product,products,setProducts}) => {
             <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 dark:text-white">
               {name}
             </h3>
-            <div className='flex justify-center'>
+            <div className="flex justify-center">
               <div className="h-[1px] w-28 border"></div>
             </div>
             <div className="flex items-center justify-between py-2">
@@ -81,14 +81,25 @@ const Card = ({product,products,setProducts}) => {
             >
               <span className="font-bold ">${price}</span>
               <div className="flex flex-row-reverse gap-3">
-                <Link to={`/details/${brand}${_id}`} className="btn btn-outline p-1 btn-sm border rounded-lg ">
+                <Link
+                  to={`/details/${brand}${_id}`}
+                  className="btn btn-outline p-1 btn-sm border rounded-lg "
+                >
                   Details
                 </Link>
-                <Link to={`/edit-product/${brand}${_id}`} className="text-xl p-0 mt-1.5">
-                  <BiEditAlt />
-                </Link>
+
+                <div className="mt-1.5 tooltip" data-tip="hello">
+                  <Link
+                    to={`/edit-product/${brand}${_id}`}
+                    className="text-xl p-0"
+                  >
+                    <BiEditAlt />
+                  </Link>
+                </div>
                 <button onClick={handleDelete} className="text-xl">
-                  <AiFillDelete />
+                  <div data-tip="Edit Item" className="mt-1.5 tooltip">
+                    <AiFillDelete />
+                  </div>
                 </button>
               </div>
             </div>

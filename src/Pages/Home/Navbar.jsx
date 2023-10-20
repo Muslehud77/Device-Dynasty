@@ -15,7 +15,7 @@ const Navbar = () => {
     const {pathname} = useLocation()
    
     
-  const { setDark, dark, user, fetchCart } = useContext(AuthContext);
+  const { setDark, dark, user } = useContext(AuthContext);
 
   const paths = (
     <>
@@ -52,10 +52,12 @@ const Navbar = () => {
 
     return (
       <header
-        className={`flex flex-wrap md:justify-start md:flex-nowrap relative z-50 w-full text-sm`}
+        className={`flex  flex-wrap md:justify-start md:flex-nowrap relative z-50 w-full text-sm`}
       >
         <nav
-          className={`mt-6 relative container w-full ${pathname !== '/' && 'rounded-full border-2'} mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:bg-gray-800 dark:border-gray-700`}
+          className={`mt-6 relative container w-full ${
+            pathname !== "/" && "rounded-[40px] border-2"
+          } mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:bg-gray-800 dark:border-gray-700`}
           aria-label="Global"
         >
           <div className="flex items-center justify-between">
@@ -69,10 +71,10 @@ const Navbar = () => {
             <div className="md:hidden">
               <button
                 type="button"
-                className={`hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-full border font-medium bg-white text-gray-700 shadow-sm align-middle hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600 transition-all text-sm ${
+                className={`hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-full border font-medium shadow-sm align-middle  focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all text-sm ${
                   dark
                     ? " bg-slate-900 hover:bg-slate-80 border-gray-700 text-gray-100 hover:text-white focus:ring-offset-gray-800"
-                    : ""
+                    : "bg-white text-gray-700 focus:ring-blue-600 hover:bg-gray-50 focus:ring-offset-white"
                 }`}
                 data-hs-collapse="#navbar-collapse-with-animation"
                 aria-controls="navbar-collapse-with-animation"

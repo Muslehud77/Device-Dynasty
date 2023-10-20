@@ -7,6 +7,7 @@ import { styled } from "@mui/system";
 import { useContext } from "react";
 import { AuthContext } from "../ContextProvider/AuthContext";
 import userImg from '../Assets/user.png'
+import toast from "react-hot-toast";
 
  
 let isDark = null
@@ -15,6 +16,16 @@ export default function User() {
    const { dark , user ,logout,name} = useContext(AuthContext);
    isDark = dark
  
+   const handleLogout = ()=>{
+    logout()
+    toast.success(`Logged Out`, {
+      style: {
+        borderRadius: "10px",
+        background: `${dark ? "black" : "white"}`,
+        color: `${!dark ? "black" : "white"}`,
+      },
+    });
+   }
 
   return (
     <div className="relative z-[100]">
@@ -30,7 +41,7 @@ export default function User() {
           <MenuItem className="capitalize">
             {user.displayName ? user.displayName : name}
           </MenuItem>
-          <MenuItem className="hover:cursor-pointer" onClick={logout}>
+          <MenuItem className="hover:cursor-pointer" onClick={handleLogout}>
             Logout
           </MenuItem>
         </Menu>

@@ -74,7 +74,7 @@ const bannerImgs = [
       </Swiper>
       <div className="flex flex-col justify-center items-center my-10">
         <h4 className="text-4xl font-semibold my-10">Available Cameras</h4>
-        <div className="md:grid grid-cols-4 gap-5">
+        <div className="md:grid  md:grid-cols-2 lg:grid-cols-4 gap-5">
           {cameras.map((camera, idx) => (
             <Card
               key={idx}
@@ -87,7 +87,7 @@ const bannerImgs = [
       </div>
       <div className="flex flex-col justify-center items-center my-10">
         <h4 className="text-4xl font-semibold my-10">Available Drones</h4>
-        <div className="md:grid grid-cols-4 gap-5">
+        <div className="md:grid  md:grid-cols-2 lg:grid-cols-4 gap-5">
           {drones.map((drone, idx) => (
             <Card
               key={idx}

@@ -9,10 +9,12 @@ import bg2 from '../../Assets/Animated Shape (1).svg'
 import { BsCart } from "react-icons/bs";
 import { useContext } from "react";
 import { AuthContext } from "../../ContextProvider/AuthContext";
+import toast from "react-hot-toast";
 
 const ProductDetails = () => {
     const { fetchCart,dark } = useContext(AuthContext);
 
+    
 
     const product = useLoaderData()
     const [showFull,setShowFull] = useState(false)
@@ -65,6 +67,13 @@ const handleAddToCart = () =>{
     },
     body: JSON.stringify(cartProduct),
   }).then(res=>res.json()).then(data=>{
+    toast.success(`${name} added to cart`, {
+      style: {
+        borderRadius: "10px",
+        background: `${dark ? "black" : "white"}`,
+        color: `${!dark ? "black" : "white"}`,
+      },
+    });
    fetchCart()
     console.log(data)
   })

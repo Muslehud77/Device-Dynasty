@@ -1,13 +1,15 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-
+import celebration from '../Assets/celebration.gif'
 import CartCard from "./CartCard";
 import {FaShoppingCart} from 'react-icons/fa'
 import { useContext } from "react";
 import { AuthContext } from "../ContextProvider/AuthContext";
 import { useEffect } from "react";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 
 
@@ -18,49 +20,67 @@ export default function Cart() {
     right: false,
   });
 
-
+console.log(state)
 
   const amount = cart.reduce((base, c) => {
     return base + parseFloat(c.price);
   }, 0);
 
- 
-const handleCheckOut = ()=>{
-  
-    fetch("http://localhost:5000/cart", {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if(data.deletedCount>0){
-            Swal.fire({
-              title: "Sweet!",
-              text: "Modal with a custom image.",
-              imageUrl: "https://unsplash.it/400/200",
-              imageWidth: 400,
-              imageHeight: 200,
-              imageAlt: "Custom image",
-            });
-           fetchCart()
-        }
-        console.log(data);
-      });
-}
+
 
  
-  const toggleDrawer = (anchor, open) => (event) => {
+  const toggleDrawer = (anchor, open,type) => (event) => {
+    
     if (
-      event.type === "keydown" &&
+     ( event.type === "keydown" || type === 'click') &&
       (event.key === "Tab" || event.key === "Shift")
     ) {
+         console.log(type);
       return;
     }
-
+   
     setState({ ...state, [anchor]: open });
   };
 
+  
+ 
+const handleCheckOut = () => {
+  fetch("http://localhost:5000/cart", {
+    method: "DELETE",
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.deletedCount > 0) {
+        fetchCart();
+        setShow(false)
+        Swal.fire({
+          title:
+            "Thank you for choosing Device Dynasty for your Device Needs!  ",
+          imageUrl: `${celebration}`,
+          imageWidth: 200,
+          imageHeight: 200,
+          imageAlt: "Custom image",
+          confirmButtonText: "Okay!",
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            setShow(true);
+          } else if (result.isDenied) {
+            Swal.fire("Changes are not saved", "", "info");
+          }
+        });
+        
+      } 
+      console.log(data);
+    });
+};
+
+
+const [show,setShow] = useState(true)
+
+
   const list = () => (
-    <Box>
+    <Box className={`${show ? "" : "hidden"} `}>
       <div
         className={`flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 ${
           dark && "bg-gray-900 text-gray-100"
@@ -81,30 +101,34 @@ const handleCheckOut = ()=>{
           </p>
         </div>
         <div className="flex justify-end space-x-4">
-          <button
+          <Link
+            to={"/"}
             type="button"
             className="px-6 py-2 border rounded-md dark:border-violet-400"
           >
             Back
             <span className="sr-only sm:not-sr-only">to shop</span>
-          </button>
-          <button
-            onClick={() => handleCheckOut()}
-            type="button"
-            className="px-6 py-2 border rounded-md dark:bg-violet-400 dark:text-gray-900 dark:border-violet-400"
-          >
-            <span className="sr-only sm:not-sr-only">Continue to</span>Checkout
-          </button>
+          </Link>
+          {cart.length > 0 && (
+            <button
+              onClick={() => handleCheckOut()}
+              type="button"
+              className="px-6 py-2 border rounded-md dark:bg-violet-400 dark:text-gray-900 dark:border-violet-400"
+            >
+              <span className="sr-only sm:not-sr-only">Continue to</span>
+              Checkout
+            </button>
+          )}
         </div>
       </div>
     </Box>
   );
 
   return (
-    <div>
+    <div  >
       {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <div onClick={() => fetchCart()} className="relative">
+          <div onClick={() => {fetchCart()}} className="relative">
             <button className="text-2xl" onClick={toggleDrawer(anchor, true)}>
               <FaShoppingCart />
             </button>
