@@ -57,7 +57,7 @@ const Navbar = () => {
         <nav
           className={`mt-6 relative container w-full ${
             pathname !== "/" && "rounded-[40px] border-2"
-          } mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto dark:bg-gray-800 dark:border-gray-700`}
+          } mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto `}
           aria-label="Global"
         >
           <div className="flex items-center justify-between">

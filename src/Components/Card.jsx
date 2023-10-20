@@ -55,8 +55,8 @@ const Card = ({product,products,setProducts}) => {
             style={{ backgroundImage: `url(${photo})` }}
           ></div>
 
-          <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
-            <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 dark:text-white">
+          <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 ">
+            <h3 className="py-2 font-bold tracking-wide text-center text-gray-800">
               {name}
             </h3>
             <div className="flex justify-center">

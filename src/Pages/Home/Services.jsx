@@ -10,7 +10,7 @@ import { TbShoppingCartDiscount } from "react-icons/tb";
 const Services = () => {
     return (
       <div>
-        <section className="m-4 md:m-8 dark:bg-gray-800 dark:text-gray-100">
+        <section className="m-4 md:m-8  ">
           <div
             data-aos="fade-up"
             className="container flex justify-center items-center flex-col mx-auto p-4 my-6 space-y-2 text-center"
@@ -19,7 +19,7 @@ const Services = () => {
               Available <span className="font-extralight">24</span>/7, we're
               here for you, always.
             </h2>
-            <p className="dark:text-gray-400 uppercase">Device Dynasty</p>
+            <p className=" uppercase">Device Dynasty</p>
             <div className="w-20 bg-black h-[1px]"></div>
           </div>
           <div className="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">

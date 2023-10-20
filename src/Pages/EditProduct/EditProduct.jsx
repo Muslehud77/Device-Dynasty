@@ -109,9 +109,9 @@ const {dark} = useContext(AuthContext)
         <p className="mt-2 text-lg leading-8 text-gray-600"></p>
       </div>
       <div>
-        <section className="p-6 dark:bg-gray-800 dark:text-gray-100">
+        <section className="p-6  ">
           <div className="container space-y-10 flex flex-col-reverse md:grid gap-6 mx-auto text-center lg:grid-cols-2 justify-center  xl:grid-cols-5">
-            <div className="w-full px-6  rounded-md xl:col-span-3 dark:bg-gray-900">
+            <div className="w-full px-6  rounded-md xl:col-span-3 ">
               <form
                 onChange={handleChange}
                 onSubmit={addProduct}
@@ -249,7 +249,7 @@ const {dark} = useContext(AuthContext)
               </form>
             </div>
             <div className="col-span-2">
-              <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+              <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md ">
                 <img
                   className="object-contain w-full h-64"
                   src={pPhoto}
@@ -258,16 +258,16 @@ const {dark} = useContext(AuthContext)
 
                 <div className="p-6">
                   <div>
-                    <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
+                    <span className="text-xs font-medium text-blue-600 uppercase ">
                       {pBrand}
                     </span>
-                    <h2 className="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white mb-1 hover:text-gray-600">
+                    <h2 className="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform  hover:text-gray-600">
                       {pName}
                     </h2>
-                    <span className="text-xs font-extralight text-white bg-black p-1 rounded font-medium  uppercase ">
+                    <span className="text-xs  text-white bg-black p-1 rounded  uppercase ">
                       {pType}
                     </span>
-                    <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+                    <p className="mt-3 text-sm text-gray-600 ">
                       {pDescription}
                     </p>
                   </div>

@@ -29,9 +29,7 @@ const fetchCart = ()=>{
 
 
 
-document
-  .querySelector("html")
-  .setAttribute("data-theme", `${dark ? "dark" : "light"}`); 
+document.querySelector("html").setAttribute("data-theme", `${dark ? "dark" : "light"}`); 
 
 const register = (email,password) =>{
     setLoading(true)
