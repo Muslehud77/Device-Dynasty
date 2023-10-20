@@ -5,8 +5,10 @@ import { AuthContext } from '../../ContextProvider/AuthContext';
 import {FcGoogle} from 'react-icons/fc'
 import {SiFacebook} from 'react-icons/si'
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Login = () => {
+    const { state } = useLocation();
+    const navigate = useNavigate()
 
     const [errMsg,setErrMsg] = useState(null) 
     const [showPass,setShowPass] = useState(false)
@@ -17,6 +19,7 @@ const Login = () => {
         setErrMsg(null)
         social()
         .then(res=>{
+            navigate(`${state ?  state : '/'}`)
             console.log(res.user)
         }).catch(err=>{
             console.log(err)
@@ -33,6 +36,7 @@ const Login = () => {
         login(email,password)
         .then(res=>{
             form.reset()
+            navigate(`${state ? state : "/"}`)
             console.log(res.user)
         }).catch(err=>{
             console.log(err.message)

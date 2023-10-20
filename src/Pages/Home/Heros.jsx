@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 const Heros = () => {
 
-    const {dark} = useContext(AuthContext)
 
     return (
       <div className="container mx-auto">
