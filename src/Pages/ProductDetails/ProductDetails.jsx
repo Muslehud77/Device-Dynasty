@@ -43,7 +43,7 @@ const handleDelete = () => {
             navigate(`/${brand}`)
           }
 
-          console.log(data);
+         
         });
     }
   });
@@ -75,7 +75,7 @@ const handleAddToCart = () =>{
       },
     });
    fetchCart()
-    console.log(data)
+    
   })
 }
     

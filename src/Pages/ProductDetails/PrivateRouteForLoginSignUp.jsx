@@ -7,7 +7,6 @@ const PrivateRouteForLoginSignUp = ({children}) => {
 const {user,loading} = useContext(AuthContext)
 const {state,pathname} = useLocation()
 
-console.log(state,pathname);
 
 
     if(!user){

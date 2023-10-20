@@ -20,7 +20,7 @@ export default function Cart() {
     right: false,
   });
 
-console.log(state)
+
 
   const amount = cart.reduce((base, c) => {
     return base + parseFloat(c.price);
@@ -35,7 +35,7 @@ console.log(state)
      ( event.type === "keydown" || type === 'click') &&
       (event.key === "Tab" || event.key === "Shift")
     ) {
-         console.log(type);
+        
       return;
     }
    
@@ -71,7 +71,7 @@ const handleCheckOut = () => {
         });
         
       } 
-      console.log(data);
+    
     });
 };
 

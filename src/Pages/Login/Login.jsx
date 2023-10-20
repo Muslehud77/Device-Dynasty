@@ -28,7 +28,7 @@ const Login = () => {
                 color: `${!dark ? "black" : "white"}`,
               },
             });
-            console.log(res.user)
+           
         }).catch(err=>{
             console.log(err)
         })
@@ -52,7 +52,7 @@ const Login = () => {
                 color: `${!dark ? "black" : "white"}`,
               },
             });
-            console.log(res.user)
+            
         }).catch(err=>{
             console.log(err.message)
             if(err.message === 'Firebase: Error (auth/invalid-login-credentials).'){

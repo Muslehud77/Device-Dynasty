@@ -39,7 +39,7 @@ const Card = ({product,products,setProducts}) => {
                   );
                 }
 
-                console.log(data);
+                (data);
               });
           }
         });

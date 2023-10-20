@@ -29,7 +29,7 @@ const Register = () => {
     const photoURL = form.get("photoUrl");
     const email = form.get("email");
     const password = form.get("password");
-    console.log(displayName, photoURL, email);
+    
     if (password.length < 6) {
       setErr("Password must be at least 6 characters!");
       toast.error(`Password must be at least 6 characters!`, {
@@ -98,7 +98,7 @@ const Register = () => {
 
       })
       .catch((error) => {
-        console.log(error);
+       
         setErr(error.message);
       });
   };

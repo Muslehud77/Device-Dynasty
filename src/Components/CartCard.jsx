@@ -17,7 +17,7 @@ const CartCard = ({c}) => {
             if (data.deletedCount > 0) {
               setCart(cart.filter((crt) => crt._id !== id));
             }
-            console.log(data);
+          
           });
     }
     return (

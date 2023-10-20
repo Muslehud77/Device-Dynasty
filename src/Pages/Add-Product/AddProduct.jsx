@@ -45,8 +45,7 @@ export default function AddProduct() {
               timer: 1500,
             });
         }
-          
-        console.log(data)
+      
     })
 
 
