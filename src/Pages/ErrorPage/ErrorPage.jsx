@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
     return (
@@ -33,13 +34,13 @@ const ErrorPage = () => {
             <p className="text-3xl">
               Looks like our services are currently offline
             </p>
-            <a
+            <Link
               rel="noopener noreferrer"
-              href="#"
+              to={'/'}
               className="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900"
             >
               Back to homepage
-            </a>
+            </Link>
           </div>
         </section>
       </div>

@@ -22,7 +22,7 @@ const Card = ({product,products,setProducts}) => {
           confirmButtonText: "Yes, delete it!",
         }).then((result) => {
           if (result.isConfirmed) {
-            fetch(`http://localhost:5000/${brand}${_id}`, {
+            fetch(`https://device-dynasty-server-side.vercel.app/${brand}${_id}`, {
               method: "DELETE",
             })
               .then((res) => res.json())

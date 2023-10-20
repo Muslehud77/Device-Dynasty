@@ -38,7 +38,7 @@ const {dark} = useContext(AuthContext)
     };
   
 
-    fetch(`http://localhost:5000/${brand}${_id}`, {
+    fetch(`https://device-dynasty-server-side.vercel.app/${brand}${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

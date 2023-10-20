@@ -42,38 +42,38 @@ const router = createBrowserRouter([
       },
       {
         path: "/apple",
-        loader: () => fetch("http://localhost:5000/apple"),
+        loader: () => fetch("https://device-dynasty-server-side.vercel.app/apple"),
         element: <Apple></Apple>,
       },
       {
         path: "/dji",
-        loader: () => fetch("http://localhost:5000/dji"),
+        loader: () => fetch("https://device-dynasty-server-side.vercel.app/dji"),
 
         element: <Dji></Dji>,
       },
       {
         path: "/samsung",
-        loader: () => fetch("http://localhost:5000/samsung"),
+        loader: () => fetch("https://device-dynasty-server-side.vercel.app/samsung"),
         element: <Samsung></Samsung>,
       },
       {
         path: "/google",
-        loader: () => fetch("http://localhost:5000/google"),
+        loader: () => fetch("https://device-dynasty-server-side.vercel.app/google"),
         element: <Google></Google>,
       },
       {
         path: "/sony",
-        loader: () => fetch("http://localhost:5000/sony"),
+        loader: () => fetch("https://device-dynasty-server-side.vercel.app/sony"),
         element: <Sony></Sony>,
       },
       {
         path: "/microsoft",
-        loader: () => fetch("http://localhost:5000/microsoft"),
+        loader: () => fetch("https://device-dynasty-server-side.vercel.app/microsoft"),
         element: <Microsoft></Microsoft>,
       },
       {
         path: "/edit-product/:id",
-        loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
+        loader: ({ params }) => fetch(`https://device-dynasty-server-side.vercel.app/${params.id}`),
         element: (
           <PrivateRouteForOthers>
             <EditProduct></EditProduct>
@@ -82,7 +82,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
+        loader: ({ params }) => fetch(`https://device-dynasty-server-side.vercel.app/${params.id}`),
         element: (
           <PrivateRouteForOthers>
             <ProductDetails></ProductDetails>

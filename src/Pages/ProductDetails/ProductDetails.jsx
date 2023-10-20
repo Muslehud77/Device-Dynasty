@@ -33,7 +33,7 @@ const handleDelete = () => {
     confirmButtonText: "Yes, delete it!",
   }).then((result) => {
     if (result.isConfirmed) {
-      fetch(`http://localhost:5000/${brand}${_id}`, {
+      fetch(`https://device-dynasty-server-side.vercel.app/${brand}${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -60,7 +60,7 @@ const cartProduct = {
 };
 
 const handleAddToCart = () =>{
-  fetch("http://localhost:5000/cart", {
+  fetch("https://device-dynasty-server-side.vercel.app/cart", {
     method: "POST",
     headers: {
       "content-type": "application/json",

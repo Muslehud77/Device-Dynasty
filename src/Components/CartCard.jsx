@@ -9,7 +9,7 @@ const CartCard = ({c}) => {
     c;
 
     const handleRemove=(id)=>{
-        fetch(`http://localhost:5000/cart/${id}`, {
+        fetch(`https://device-dynasty-server-side.vercel.app/cart/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

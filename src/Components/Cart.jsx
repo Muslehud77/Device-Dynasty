@@ -45,7 +45,7 @@ export default function Cart() {
   
  
 const handleCheckOut = () => {
-  fetch("http://localhost:5000/cart", {
+  fetch("https://device-dynasty-server-side.vercel.app/cart", {
     method: "DELETE",
   })
     .then((res) => res.json())
