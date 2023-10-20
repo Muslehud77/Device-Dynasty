@@ -12,7 +12,7 @@ import { AuthContext } from "../../ContextProvider/AuthContext";
 import toast from "react-hot-toast";
 
 const ProductDetails = () => {
-    const { fetchCart,dark } = useContext(AuthContext);
+    const { fetchCart, dark, goToTop } = useContext(AuthContext);
 
     
 
@@ -132,7 +132,7 @@ const handleAddToCart = () =>{
                           </div>
                         </div>
                         <div className="flex flex-row-reverse gap-3 mt-2">
-                          <Link
+                          <Link onClick={goToTop}
                             to={`/edit-product/${brand}${_id}`}
                             className="text-xl p-0"
                           >
@@ -144,7 +144,7 @@ const handleAddToCart = () =>{
                         </div>
                       </div>
                       <div className="flex bg-gray-700 rounded-tl-2xl">
-                        <Link
+                        <Link onClick={goToTop}
                           to={`/${brand}`}
                           className="btn rounded-none w-1/2 rounded-tl-xl h-full rounded-bl-none  btn-sm"
                         >

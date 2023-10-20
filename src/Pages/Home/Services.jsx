@@ -11,15 +11,22 @@ const Services = () => {
     return (
       <div>
         <section className="m-4 md:m-8 dark:bg-gray-800 dark:text-gray-100">
-          <div className="container flex justify-center items-center flex-col mx-auto p-4 my-6 space-y-2 text-center">
+          <div
+            data-aos="fade-up"
+            className="container flex justify-center items-center flex-col mx-auto p-4 my-6 space-y-2 text-center"
+          >
             <h2 className="text-5xl font-bold">
-              Available 24<span className='font-extralight'>/7</span>, we're here for you, always.
+              Available <span className="font-extralight">24</span>/7, we're
+              here for you, always.
             </h2>
             <p className="dark:text-gray-400 uppercase">Device Dynasty</p>
             <div className="w-20 bg-black h-[1px]"></div>
           </div>
           <div className="container mx-auto grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="flex flex-col items-center p-4">
+            <div
+              data-aos="fade-right"
+              className="flex flex-col items-center p-4"
+            >
               <BsFillMenuButtonWideFill className="text-3xl" />
               <h3 className="my-3 text-3xl font-semibold text-center">
                 Wide Product Range
@@ -30,7 +37,10 @@ const Services = () => {
                 <p>Accessories Galore</p>
               </div>
             </div>
-            <div className="flex flex-col items-center p-4">
+            <div
+              data-aos="fade-down"
+              className="flex flex-col items-center p-4"
+            >
               <RiSecurePaymentFill className="text-3xl" />
               <h3 className="my-3 text-3xl font-semibold text-center">
                 Secure Shopping Experience
@@ -41,7 +51,10 @@ const Services = () => {
                 <p>Encrypted Checkout</p>
               </div>
             </div>
-            <div className="flex flex-col items-center p-4">
+            <div
+              data-aos="fade-left"
+              className="flex flex-col items-center p-4"
+            >
               <BiSupport className="text-3xl" />
               <h3 className="my-3 text-3xl font-semibold text-center">
                 Expert Customer Support
@@ -52,7 +65,10 @@ const Services = () => {
                 <p>Technical Assistance</p>
               </div>
             </div>
-            <div className="flex flex-col items-center p-4">
+            <div
+              data-aos="fade-right"
+              className="flex flex-col items-center p-4"
+            >
               <LiaShippingFastSolid className="text-3xl" />
               <h3 className="my-3 text-3xl font-semibold text-center">
                 Fast Shipping and Delivery
@@ -63,7 +79,10 @@ const Services = () => {
                 <p>Order Tracking</p>
               </div>
             </div>
-            <div className="flex flex-col items-center p-4">
+            <div
+              data-aos="fade-down"
+              className="flex flex-col items-center p-4"
+            >
               <MdRateReview className="text-3xl" />
               <h3 className="my-3 text-3xl font-semibold text-center">
                 Product Reviews and Ratings
@@ -74,7 +93,10 @@ const Services = () => {
                 <p>Star Ratings</p>
               </div>
             </div>
-            <div className="flex flex-col items-center p-4">
+            <div
+              data-aos="fade-left"
+              className="flex flex-col items-center p-4"
+            >
               <TbShoppingCartDiscount className="text-3xl" />
               <h3 className="my-3 text-3xl font-semibold text-center">
                 Promotions and Discounts

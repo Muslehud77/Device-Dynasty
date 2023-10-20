@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Card = ({product,products,setProducts}) => {
-    const {dark} = useContext(AuthContext)
+    const { dark, goToTop } = useContext(AuthContext);
     const {_id, brand, price,  name, rating, photo,productType } =
       product;
 
@@ -48,7 +48,7 @@ const Card = ({product,products,setProducts}) => {
       }
     
     return (
-      <div className="mb-5 ">
+      <div data-aos="fade-up" className="mb-5 ">
         <div className="flex flex-col items-center justify-center w-80  mx-auto">
           <div
             className="w-full h-64 bg-gray-300 bg-center  bg-cover  rounded-lg shadow-md"
@@ -86,7 +86,7 @@ const Card = ({product,products,setProducts}) => {
             >
               <span className="font-bold ">${price}</span>
               <div className="flex flex-row-reverse gap-3">
-                <Link
+                <Link onClick={goToTop}
                   to={`/details/${brand}${_id}`}
                   className="btn btn-outline p-1 btn-sm border rounded-lg "
                 >
@@ -94,7 +94,7 @@ const Card = ({product,products,setProducts}) => {
                 </Link>
 
                 <div className="mt-1.5 tooltip" data-tip="hello">
-                  <Link
+                  <Link onClick={goToTop}
                     to={`/edit-product/${brand}${_id}`}
                     className="text-xl p-0"
                   >

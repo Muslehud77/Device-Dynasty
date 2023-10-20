@@ -16,7 +16,7 @@ import { AuthContext } from '../../ContextProvider/AuthContext';
 import { Link } from 'react-router-dom';
 
 export default function BrandBanners() {
-    const {dark} = useContext(AuthContext)
+    const { dark, goToTop } = useContext(AuthContext);
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -62,7 +62,7 @@ export default function BrandBanners() {
 
                 <div className="absolute z-50 inset-0 w-full h-full">
                   <div className="flex flex-col justify-center items-center w-full h-full">
-                    <Link
+                    <Link onClick={goToTop}
                       to={"/apple"}
                       className="inline-flex bg-opacity-50 hover:bg-opacity-95 duration-500 justify-center items-center gap-x-1.5 text-center text-sm bg-white text-gray-800 hover:text-gray-600 rounded-full transition focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:bg-black dark:text-gray-200 dark:hover:text-gray-400 dark:focus:ring-offset-black"
                     >
@@ -115,7 +115,7 @@ export default function BrandBanners() {
 
                 <div className="absolute z-50 inset-0 w-full h-full">
                   <div className="flex flex-col justify-center items-center w-full h-full">
-                    <Link
+                    <Link onClick={goToTop}
                       to={"/dji"}
                       className="inline-flex  bg-opacity-50 hover:bg-opacity-95 duration-500 justify-center items-center gap-x-1.5 text-center text-sm bg-white text-gray-800 hover:text-gray-600 rounded-full transition focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:bg-black dark:text-gray-200 dark:hover:text-gray-400 dark:focus:ring-offset-black"
                     >
@@ -168,7 +168,7 @@ export default function BrandBanners() {
 
                 <div className="absolute z-50 inset-0 w-full h-full">
                   <div className="flex flex-col justify-center items-center w-full h-full">
-                    <Link
+                    <Link onClick={goToTop}
                       to={"/google"}
                       className="inline-flex  bg-opacity-50 hover:bg-opacity-95 duration-500 justify-center items-center gap-x-1.5 text-center text-sm bg-white text-gray-800 hover:text-gray-600 rounded-full transition focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:bg-black dark:text-gray-200 dark:hover:text-gray-400 dark:focus:ring-offset-black"
                     >
@@ -223,7 +223,7 @@ export default function BrandBanners() {
 
                 <div className="absolute z-50 inset-0 w-full h-full">
                   <div className="flex flex-col justify-center items-center w-full h-full">
-                    <Link
+                    <Link onClick={goToTop}
                       to={"/microsoft"}
                       className="inline-flex  bg-opacity-50 hover:bg-opacity-95 duration-500 justify-center items-center gap-x-1.5 text-center text-sm bg-white text-gray-800 hover:text-gray-600 rounded-full transition focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:bg-black dark:text-gray-200 dark:hover:text-gray-400 dark:focus:ring-offset-black"
                     >
@@ -278,7 +278,7 @@ export default function BrandBanners() {
 
                 <div className="absolute z-50 inset-0 w-full h-full">
                   <div className="flex flex-col justify-center items-center w-full h-full">
-                    <Link
+                    <Link onClick={goToTop}
                       to={"/samsung"}
                       className="inline-flex  bg-opacity-50 hover:bg-opacity-95 duration-500 justify-center items-center gap-x-1.5 text-center text-sm bg-white text-gray-800 hover:text-gray-600 rounded-full transition focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:bg-black dark:text-gray-200 dark:hover:text-gray-400 dark:focus:ring-offset-black"
                     >
@@ -333,7 +333,7 @@ export default function BrandBanners() {
 
                 <div className="absolute z-50 inset-0 w-full h-full">
                   <div className="flex flex-col justify-center items-center w-full h-full">
-                    <Link
+                    <Link onClick={goToTop}
                       to={"/sony"}
                       className="inline-flex  bg-opacity-50 hover:bg-opacity-95 duration-500 justify-center items-center gap-x-1.5 text-center text-sm bg-white text-gray-800 hover:text-gray-600 rounded-full transition focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-3 px-4 dark:bg-black dark:text-gray-200 dark:hover:text-gray-400 dark:focus:ring-offset-black"
                     >

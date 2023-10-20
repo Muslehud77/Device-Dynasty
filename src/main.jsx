@@ -14,7 +14,7 @@ import Sony from './Pages/Category/Sony';
 import Microsoft from './Pages/Category/Microsoft';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
 import AuthProvider from './ContextProvider/AuthContext';
-import PrivateRouteForLoginSignUp from './Pages/ProductDetails/PrivateRouteForLoginSignUp';
+import PrivateRouteForLoginSignUp from './PrivateRoute/PrivateRouteForLoginSignUp';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Home from './Pages/Home/Home';

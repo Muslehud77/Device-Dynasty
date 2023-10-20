@@ -3,14 +3,19 @@ import { AuthContext } from '../../ContextProvider/AuthContext';
 import samsung from '../../Assets/samsung.webm'
 import { Link } from 'react-router-dom';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+
+
 const Heros = () => {
 
-
+const {goToTop} = useContext(AuthContext)
     return (
       <div className="container mx-auto">
         <section className="p-4 lg:p-8 dark:bg-gray-800 dark:text-gray-100">
           <div className="container mx-auto space-y-12">
-            <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
+            <div
+              data-aos="fade-up"
+              className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row"
+            >
               <img
                 src="https://i.postimg.cc/MHc73SyY/dji5.jpg"
                 alt=""
@@ -29,12 +34,15 @@ const Heros = () => {
                   3. Elevate Your Creativity and Capture Breathtaking Moments
                   Today!
                 </p>
-                <Link to={"/dji"} type="button" className="self-start">
+                <Link onClick={goToTop} to={"/dji"} type="button" className="self-start">
                   <AiOutlineArrowRight />
                 </Link>
               </div>
             </div>
-            <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse">
+            <div
+              data-aos="fade-up"
+              className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse"
+            >
               <video
                 src={samsung}
                 alt=""
@@ -55,12 +63,15 @@ const Heros = () => {
                   Embrace style, functionality, and cutting-edge technology
                   today!
                 </p>
-                <Link to={"/samsung"} type="button" className="self-start">
+                <Link onClick={goToTop} to={"/samsung"} type="button" className="self-start">
                   <AiOutlineArrowRight />
                 </Link>
               </div>
             </div>
-            <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
+            <div
+              data-aos="fade-up"
+              className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row"
+            >
               <img
                 src="https://i.postimg.cc/1t8B2wS6/sony2.png"
                 alt=""
@@ -78,7 +89,7 @@ const Heros = () => {
                   display, powerful performance, and cutting-edge features
                   await. Elevate your mobile world today!
                 </p>
-                <Link to={"/sony"} type="button " className="self-start">
+                <Link onClick={goToTop} to={"/sony"} type="button " className="self-start">
                   <AiOutlineArrowRight />
                 </Link>
               </div>

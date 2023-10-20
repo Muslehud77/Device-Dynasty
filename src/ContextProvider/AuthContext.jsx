@@ -15,6 +15,10 @@ const [cart,setCart] = useState([])
 const [name,setName] = useState('')
 
 
+const goToTop = ()=>{
+    window.scrollTo(0,0)
+}
+
 const fetchCart = ()=>{
     fetch("http://localhost:5000/cart")
     .then(res=>res.json())
@@ -58,6 +62,7 @@ useEffect(()=>{
     return ()=> unsubscribe()
 },[])
     const info = {
+        goToTop,
         fetchCart,
         name,
         setName,
