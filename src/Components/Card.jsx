@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 
 const Card = ({product,products,setProducts}) => {
     const {dark} = useContext(AuthContext)
-    const {_id, brand, price,  name, rating, photo } =
+    const {_id, brand, price,  name, rating, photo,productType } =
       product;
 
       const handleDelete = () =>{
@@ -71,8 +71,13 @@ const Card = ({product,products,setProducts}) => {
                   size="small"
                 />
               </div>
-              <div className="text-xs bg-black text-white rounded-md p-[3px] px-2 mb-1 mr-2">
-                {brand}
+              <div className="flex">
+                <div className="text-xs bg-black text-white rounded-md p-[3px] px-2 mb-1 mr-2">
+                  {brand}
+                </div>
+                <div className="text-xs text-black border-2 rounded-md p-[3px] px-2 mb-1 mr-2">
+                  {productType}
+                </div>
               </div>
             </div>
             <div

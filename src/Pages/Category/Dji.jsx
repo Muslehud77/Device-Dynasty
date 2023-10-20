@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import coming from '../../Assets/productsComming.svg'
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -72,7 +72,17 @@ const bannerImgs = [
           <span ref={progressContent}></span>
         </div>
       </Swiper>
-      <div className="flex flex-col justify-center items-center my-10">
+      <div className=" h-screen  my-20">
+        <h4 className="text-4xl font-semibold text-center">
+          Get ready to 'patiently' embrace our new products! They're on their
+          way, and we promise it'll be worth the wait. Stay tuned, and in the
+          meantime, keep calm and keep smiling! 😷🏥 #ComingSoon
+        </h4>
+        <div className="flex items-center justify-center my-10">
+          <img src={coming} alt="" />
+        </div>
+      </div>
+      {/* <div className="flex flex-col justify-center items-center my-10">
         <h4 className="text-4xl font-semibold my-10">Available Cameras</h4>
         <div className="md:grid  md:grid-cols-2 lg:grid-cols-4 gap-5">
           {cameras.map((camera, idx) => (
@@ -84,8 +94,8 @@ const bannerImgs = [
             ></Card>
           ))}
         </div>
-      </div>
-      <div className="flex flex-col justify-center items-center my-10">
+      </div> */}
+      {/* <div className="flex flex-col justify-center items-center my-10">
         <h4 className="text-4xl font-semibold my-10">Available Drones</h4>
         <div className="md:grid  md:grid-cols-2 lg:grid-cols-4 gap-5">
           {drones.map((drone, idx) => (
@@ -97,7 +107,7 @@ const bannerImgs = [
             ></Card>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
