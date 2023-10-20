@@ -28,6 +28,10 @@ const Card = ({product,products,setProducts}) => {
               .then((res) => res.json())
               .then((data) => {
                 if (data.deletedCount ===1) {
+
+                    const productsToShow = products.filter(p=>p._id !== _id)
+                    setProducts(productsToShow)
+
                   Swal.fire(
                     "Deleted!",
                     "Your file has been deleted.",

@@ -14,6 +14,17 @@ const [dark,setDark] = useState(false)
 const [cart,setCart] = useState([])
 const [name,setName] = useState('')
 
+
+const fetchCart = ()=>{
+    fetch("http://localhost:5000/cart")
+    .then(res=>res.json())
+    .then(data=>{
+        setCart(data)
+    })
+}
+
+
+
 document
   .querySelector("html")
   .setAttribute("data-theme", `${dark ? "dark" : "light"}`); 
@@ -41,11 +52,13 @@ const logout = ()=>{
 useEffect(()=>{
     const unsubscribe = onAuthStateChanged(auth,(currentUser)=>{
         setUser(currentUser)
+        fetchCart()
         setLoading(false)
     })
     return ()=> unsubscribe()
 },[])
     const info = {
+        fetchCart,
         name,
         setName,
      cart,

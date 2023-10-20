@@ -86,20 +86,29 @@ const Apple = () => {
         <h4 className="text-4xl font-semibold my-10">Available Phones</h4>
         <div className="md:grid grid-cols-4 gap-5">
           {phones.map((phone, idx) => (
-            <Card key={idx} product={phone}></Card>
+            <Card
+              key={idx}
+              products={phones}
+              setProducts={setPhones}
+              product={phone}
+            ></Card>
           ))}
         </div>
       </div>
-      
+
       <div className="flex flex-col justify-center items-center my-10">
         <h4 className="text-4xl font-semibold my-10">Available Cameras</h4>
         <div className="md:grid grid-cols-4 gap-5">
           {cameras.map((camera, idx) => (
-            <Card key={idx} product={camera}></Card>
+            <Card
+              key={idx}
+              products={cameras}
+              setProducts={setCameras}
+              product={camera}
+            ></Card>
           ))}
         </div>
       </div>
-     
     </div>
   );
 };

@@ -57,8 +57,7 @@ const Apple = () => {
 
   return (
     <div className="container relative z-0 mx-auto my-10">
-      <Swiper 
-      
+      <Swiper
         spaceBetween={0}
         centeredSlides={true}
         autoplay={{
@@ -76,12 +75,7 @@ const Apple = () => {
         {bannerImgs.map((img, idx) => (
           <SwiperSlide key={idx}>
             <div className="bg-black  ">
-              
-              <img
-                src={img}
-                className="h-[500px] md:h-[800px] "
-                alt=""
-              />
+              <img src={img} className="h-[500px] md:h-[800px] " alt="" />
             </div>
           </SwiperSlide>
         ))}
@@ -92,38 +86,58 @@ const Apple = () => {
           <span ref={progressContent}></span>
         </div>
       </Swiper>
-            <div className="flex flex-col justify-center items-center my-10">
-                <h4 className="text-4xl font-semibold my-10">Available Phones</h4>
-                <div className="md:grid grid-cols-4 gap-5">
-                    {
-                        phones.map((phone,idx)=><Card key={idx} product={phone}></Card>)
-                    }
-                </div>
-            </div>
-            <div className="flex flex-col justify-center items-center my-10">
-                <h4 className="text-4xl font-semibold my-10">Available Watches</h4>
-                <div className="md:grid grid-cols-4 gap-5">
-                    {
-                        watches.map((watch,idx)=><Card key={idx} product={watch}></Card>)
-                    }
-                </div>
-            </div>
-            <div className="flex flex-col justify-center items-center my-10">
-                <h4 className="text-4xl font-semibold my-10">Available Laptops</h4>
-                <div className="md:grid grid-cols-4 gap-5">
-                    {
-                        laptops.map((laptop,idx)=><Card key={idx} product={laptop}></Card>)
-                    }
-                </div>
-            </div>
-            <div className="flex flex-col justify-center items-center my-10">
-                <h4 className="text-4xl font-semibold my-10">Available Tablets</h4>
-                <div className="md:grid grid-cols-4 gap-5">
-                    {
-                        tablets.map((tablet,idx)=><Card key={idx} product={tablet}></Card>)
-                    }
-                </div>
-            </div>
+      <div className="flex flex-col justify-center items-center my-10">
+        <h4 className="text-4xl font-semibold my-10">Available Phones</h4>
+        <div className="md:grid grid-cols-4 gap-5">
+          {phones.map((phone, idx) => (
+            <Card
+              products={phones}
+              setProducts={setPhones}
+              key={idx}
+              product={phone}
+            ></Card>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col justify-center items-center my-10">
+        <h4 className="text-4xl font-semibold my-10">Available Watches</h4>
+        <div className="md:grid grid-cols-4 gap-5">
+          {watches.map((watch, idx) => (
+            <Card
+              key={idx}
+              products={watches}
+              setProducts={setWatches}
+              product={watch}
+            ></Card>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col justify-center items-center my-10">
+        <h4 className="text-4xl font-semibold my-10">Available Laptops</h4>
+        <div className="md:grid grid-cols-4 gap-5">
+          {laptops.map((laptop, idx) => (
+            <Card
+              key={idx}
+              products={laptops}
+              setProducts={setLaptops}
+              product={laptop}
+            ></Card>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col justify-center items-center my-10">
+        <h4 className="text-4xl font-semibold my-10">Available Tablets</h4>
+        <div className="md:grid grid-cols-4 gap-5">
+          {tablets.map((tablet, idx) => (
+            <Card
+              key={idx}
+              products={tablets}
+              setProducts={setTablets}
+              product={tablet}
+            ></Card>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

@@ -6,16 +6,23 @@ import CartCard from "./CartCard";
 import {FaShoppingCart} from 'react-icons/fa'
 import { useContext } from "react";
 import { AuthContext } from "../ContextProvider/AuthContext";
+import { useEffect } from "react";
 
 
 
 export default function Cart() {
-    const {cart,user} = useContext(AuthContext)
+    const { cart, user , fetchCart} = useContext(AuthContext);
   const [state, setState] = React.useState({
    
     right: false,
   });
 
+ const amount = cart.reduce((base, c) => {
+   return base + c.price;
+ }, 0);
+
+ const total = parseFloat(amount).toFixed(2)
+ 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -32,13 +39,13 @@ export default function Cart() {
       <div className="flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 dark:bg-gray-900 dark:text-gray-100">
         <h2 className="text-xl font-semibold">Your cart</h2>
         <ul className="flex flex-col divide-y divide-gray-700">
-          {cart.length > 0 && cart.map((c,idx) => <CartCard key={idx} c={c}></CartCard>)}
-         
+          {cart.length > 0 &&
+            cart.map((c, idx) => <CartCard key={idx} c={c}></CartCard>)}
         </ul>
         <div className="space-y-1 text-right">
           <p>
             Total amount:
-            <span className="font-semibold">357 €</span>
+            <span className="font-semibold">${total}</span>
           </p>
           <p className="text-sm dark:text-gray-400">
             Not including taxes and shipping costs
@@ -67,7 +74,7 @@ export default function Cart() {
     <div>
       {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <div className="relative">
+          <div onClick={() => fetchCart()} className="relative">
             <button className="text-2xl" onClick={toggleDrawer(anchor, true)}>
               <FaShoppingCart />
             </button>

@@ -92,7 +92,12 @@ const Samsung = () => {
         <h4 className="text-4xl font-semibold my-10">Available Phones</h4>
         <div className="md:grid grid-cols-4 gap-5">
           {phones.map((phone, idx) => (
-            <Card key={idx} product={phone}></Card>
+            <Card
+              key={idx}
+              products={phones}
+              setProducts={setPhones}
+              product={phone}
+            ></Card>
           ))}
         </div>
       </div>
@@ -100,7 +105,12 @@ const Samsung = () => {
         <h4 className="text-4xl font-semibold my-10">Available Watches</h4>
         <div className="md:grid grid-cols-4 gap-5">
           {watches.map((watch, idx) => (
-            <Card key={idx} product={watch}></Card>
+            <Card
+              key={idx}
+              products={watches}
+              setProducts={setWatches}
+              product={watch}
+            ></Card>
           ))}
         </div>
       </div>
@@ -108,7 +118,12 @@ const Samsung = () => {
         <h4 className="text-4xl font-semibold my-10">Available Laptops</h4>
         <div className="md:grid grid-cols-4 gap-5">
           {laptops.map((laptop, idx) => (
-            <Card key={idx} product={laptop}></Card>
+            <Card
+              key={idx}
+              products={laptops}
+              setProducts={setLaptops}
+              product={laptop}
+            ></Card>
           ))}
         </div>
       </div>
@@ -116,7 +131,12 @@ const Samsung = () => {
         <h4 className="text-4xl font-semibold my-10">Available Tablets</h4>
         <div className="md:grid grid-cols-4 gap-5">
           {tablets.map((tablet, idx) => (
-            <Card key={idx} product={tablet}></Card>
+            <Card
+              key={idx}
+              products={tablets}
+              setProducts={setTablets}
+              product={tablet}
+            ></Card>
           ))}
         </div>
       </div>

@@ -13,22 +13,12 @@ import Card from "../../Components/Card";
 
 const Dji = () => {
   const products = useLoaderData();
-  const [phones, setPhones] = useState([]);
-  const [tablets, setTablets] = useState([]);
-  const [watches, setWatches] = useState([]);
-  const [laptops, setLaptops] = useState([]);
+ 
   const [cameras, setCameras] = useState([]);
   const [drones, setDrones] = useState([]);
 
   useEffect(() => {
-    const phone = products.filter((p) => p.productType === "Phone");
-    setPhones(phone);
-    const tablet = products.filter((p) => p.productType === "Tablet");
-    setTablets(tablet);
-    const watch = products.filter((p) => p.productType === "Watch");
-    setWatches(watch);
-    const laptop = products.filter((p) => p.productType === "Laptop");
-    setLaptops(laptop);
+   
     const camera = products.filter((p) => p.productType === "Camera");
     setCameras(camera);
     const drone = products.filter((p) => p.productType === "Drone");
@@ -86,7 +76,12 @@ const bannerImgs = [
         <h4 className="text-4xl font-semibold my-10">Available Cameras</h4>
         <div className="md:grid grid-cols-4 gap-5">
           {cameras.map((camera, idx) => (
-            <Card key={idx} product={camera}></Card>
+            <Card
+              key={idx}
+              products={cameras}
+              setProducts={setCameras}
+              product={camera}
+            ></Card>
           ))}
         </div>
       </div>
@@ -94,11 +89,15 @@ const bannerImgs = [
         <h4 className="text-4xl font-semibold my-10">Available Drones</h4>
         <div className="md:grid grid-cols-4 gap-5">
           {drones.map((drone, idx) => (
-            <Card key={idx} product={drone}></Card>
+            <Card
+              key={idx}
+              products={drones}
+              setProducts={setDrones}
+              product={drone}
+            ></Card>
           ))}
         </div>
       </div>
-      
     </div>
   );
 };

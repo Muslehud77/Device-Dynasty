@@ -87,20 +87,29 @@ const bannerImgs = [
         <h4 className="text-4xl font-semibold my-10">Available Phones</h4>
         <div className="md:grid grid-cols-4 gap-5">
           {phones.map((phone, idx) => (
-            <Card key={idx} product={phone}></Card>
+            <Card
+              key={idx}
+              products={phones}
+              setProducts={setPhones}
+              product={phone}
+            ></Card>
           ))}
         </div>
       </div>
-     
+
       <div className="flex flex-col justify-center items-center my-10">
         <h4 className="text-4xl font-semibold my-10">Available Laptops</h4>
         <div className="md:grid grid-cols-4 gap-5">
           {laptops.map((laptop, idx) => (
-            <Card key={idx} product={laptop}></Card>
+            <Card
+              key={idx}
+              products={laptops}
+              setProducts={setLaptops}
+              product={laptop}
+            ></Card>
           ))}
         </div>
       </div>
-     
     </div>
   );
 };

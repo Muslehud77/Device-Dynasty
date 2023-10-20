@@ -1,9 +1,6 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 
-import { styled } from "@mui/system";
-// import logo1 from '../../Assets/logo (1).png'
-// import logo2 from '../../Assets/logo (2).png'
-// import logo4 from '../../Assets/logo (4).png'
+
 import logo3 from '../../Assets/logo (3).png'
 import logo5 from '../../Assets/logo (5).png'
 import { useContext } from 'react';
@@ -18,7 +15,7 @@ const Navbar = () => {
     const {pathname} = useLocation()
    
     
-  const {setDark,dark,user} = useContext(AuthContext)
+  const { setDark, dark, user, fetchCart } = useContext(AuthContext);
 
   const paths = (
     <>

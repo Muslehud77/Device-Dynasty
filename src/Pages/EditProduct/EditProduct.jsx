@@ -250,7 +250,7 @@ const {dark} = useContext(AuthContext)
                 <img
                   className="object-contain w-full h-64"
                   src={pPhoto}
-                  alt="Article"
+                  alt={pName}
                 />
 
                 <div className="p-6">
@@ -280,7 +280,7 @@ const {dark} = useContext(AuthContext)
                         />
                       </div>
                       <span className="text-base text-white bg-black p-1 rounded font-medium  uppercase ">
-                        {pPrice}$
+                        ${pPrice}
                       </span>
                     </div>
                   </div>
