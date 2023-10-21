@@ -291,7 +291,7 @@ const Navbar = () => {
                       <Cart></Cart>
                     </div>
                   )}
-                  <label className="absolute right-16 top-4   md:hidden z-50 swap swap-rotate">
+                  <label className="absolute  right-2 top-4   md:hidden z-50 swap swap-rotate">
                     {/* this hidden checkbox controls the state */}
                     <input onClick={() => setDark(!dark)} type="checkbox" />
 
