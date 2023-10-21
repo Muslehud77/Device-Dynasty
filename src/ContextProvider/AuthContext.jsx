@@ -60,12 +60,12 @@ useEffect(()=>{
     return ()=> unsubscribe()
 },[])
     const info = {
-        goToTop,
-        fetchCart,
-        name,
-        setName,
-     cart,
-     setCart,
+      goToTop,
+      fetchCart,
+      name,
+      setName,
+      cart,
+      setCart,
       user,
       dark,
       setDark,
@@ -74,7 +74,8 @@ useEffect(()=>{
       login,
       googleLogin,
       facebookLogin,
-      logout
+      logout,
+      setLoading
     };
 
 

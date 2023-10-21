@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import("preline");
+import("preline");
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from './Root/Root';

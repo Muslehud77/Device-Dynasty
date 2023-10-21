@@ -97,7 +97,7 @@ export default function AddProduct() {
               name="brand"
               className={`select select-bordered ${
                 dark && "bg-[#3B3B3B]"
-              }  w-full max-w-xs mt-1 block rounded-md border-0 px-3.5 py-2  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
+              }  w-full  mt-1 block rounded-md border-0 px-3.5 py-2  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
             >
               <option disabled selected>
                 Brand?
@@ -118,7 +118,7 @@ export default function AddProduct() {
               name="type"
               className={`select select-bordered ${
                 dark && "bg-[#3B3B3B]"
-              }  w-full max-w-xs mt-1 block rounded-md border-0 px-3.5 py-2  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
+              }  w-full mt-1 block rounded-md border-0 px-3.5 py-2  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6`}
             >
               <option disabled selected>
                 Product?

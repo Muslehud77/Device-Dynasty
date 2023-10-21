@@ -14,13 +14,17 @@ import Card from "../../Components/Card";
 
 const Apple = () => {
 
+  
     const products = useLoaderData()
+   
     const [phones,setPhones] = useState([])
     const [tablets,setTablets] = useState([])
     const [watches,setWatches] = useState([])
     const [laptops,setLaptops] = useState([])
     const [cameras,setCameras] = useState([])
     const [drones,setDrones] = useState([])
+
+    
 
     useEffect(()=>{
         const phone = products.filter((p) => p.productType === 'Phone');
