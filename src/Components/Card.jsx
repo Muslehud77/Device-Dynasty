@@ -49,13 +49,13 @@ const Card = ({product,products,setProducts}) => {
     
     return (
       <div data-aos="fade-up" className="mb-5 ">
-        <div className="flex flex-col items-center justify-center w-80  mx-auto">
+        <div className="flex flex-col items-center justify-center w-96  mx-auto">
           <div
             className="w-full h-64 bg-gray-300 bg-center  bg-cover  rounded-lg shadow-md"
             style={{ backgroundImage: `url(${photo})` }}
           ></div>
 
-          <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 ">
+          <div className="w-64 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 ">
             <h3 className="py-2 font-bold tracking-wide text-center text-gray-800">
               {name}
             </h3>

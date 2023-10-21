@@ -78,7 +78,7 @@ const Login = () => {
     return (
       <div className="mt-10">
         {/* <button onClick={logout} className='btn' >logout test</button> */}
-        <div className="flex justify-center items-center w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
+        <div className="flex justify-center items-center w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl">
           <div className="hidden p-2 lg:block lg:w-1/2">
             <img src={img1} alt="" />
           </div>
@@ -88,13 +88,13 @@ const Login = () => {
               <img className="w-20" src={square} alt="" />
             </div>
 
-            <p className="mt-3 text-xl text-center text-gray-600 dark:text-gray-200">
+            <p className="mt-3 text-xl text-center text-gray-600 ">
               Welcome back!!
             </p>
 
            <a
               onClick={() => handleSocialLogin(googleLogin)}
-              className="flex hover:cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+              className="flex hover:cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 "
             >
               <div className="px-4 text-2xl py-2">
                 <FcGoogle />
@@ -106,7 +106,7 @@ const Login = () => {
             </a>
             <a
               onClick={() => handleSocialLogin(facebookLogin)}
-              className="flex hover:cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+              className="flex hover:cursor-pointer items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg   hover:bg-gray-50 -600"
             >
               <div className="px-4 text-2xl py-2">
                 <SiFacebook />
@@ -118,40 +118,40 @@ const Login = () => {
             </a>
 
             <div className="flex items-center justify-between mt-4">
-              <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
+              <span className="w-1/5 border-b  lg:w-1/4"></span>
 
               <a
                 href="#"
-                className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
+                className="text-xs text-center text-gray-500 uppercase  hover:underline"
               >
                 or login with email
               </a>
 
-              <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
+              <span className="w-1/5 border-b  lg:w-1/4"></span>
             </div>
 
             <form onSubmit={handleSubmit}>
               <div className="mt-4">
-                <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
+                <label className="block mb-2 text-sm font-medium text-gray-600 ">
                   Email Address
                 </label>
                 <input
                 required
                   id="LoggingEmailAddress"
                   name="email"
-                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40 -300 focus:outline-none focus:ring focus:ring-blue-300"
                   type="email"
                 />
               </div>
 
               <div className="mt-4">
                 <div className="flex justify-between">
-                  <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
+                  <label className="block mb-2 text-sm font-medium text-gray-600 ">
                     Password
                   </label>
                   <a
                     href="#"
-                    className="text-xs text-gray-500 dark:text-gray-300 hover:underline"
+                    className="text-xs text-gray-500  hover:underline"
                   >
                     Forget Password?
                   </a>
@@ -162,7 +162,7 @@ const Login = () => {
                   required
                     id="loggingPassword"
                     name="password"
-                    className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
+                    className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40 -300 focus:outline-none focus:ring focus:ring-blue-300"
                     type={showPass ? "Text" : "password"}
                   />
                   <span
@@ -190,16 +190,16 @@ const Login = () => {
             </form>
 
             <div className="flex items-center justify-between mt-4">
-              <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+              <span className="w-1/5 border-b  md:w-1/4"></span>
 
               <Link
                 to={'/register'}
-                className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
+                className="text-xs text-gray-500 uppercase  hover:underline"
               >
                 or sign up
               </Link>
 
-              <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+              <span className="w-1/5 border-b  md:w-1/4"></span>
             </div>
           </div>
         </div>

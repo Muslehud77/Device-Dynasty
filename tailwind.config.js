@@ -1,16 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
+    "node_modules/preline/dist/*.js",
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "node_modules/preline/dist/*.js",
   ],
   theme: {
     extend: {},
   },
   plugins: [
-    require("daisyui"),
     require("preline/plugin"),
+    require("daisyui"),
     require("@sira-ui/tailwind"),
   ],
 };

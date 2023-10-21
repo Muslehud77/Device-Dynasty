@@ -68,7 +68,7 @@ const Navbar = () => {
                 alt=""
               />
             </Link>
-            <div className="md:hidden">
+            <div className="md:hidden flex justify-center items-center flex-row-reverse gap-5">
               <button
                 type="button"
                 className={`hs-collapse-toggle p-2 inline-flex justify-center items-center gap-2 rounded-full border font-medium shadow-sm align-middle  focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all text-sm ${
@@ -102,17 +102,22 @@ const Navbar = () => {
                   <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                 </svg>
               </button>
+              {user && (
+                <div className=" md:hidden pt-2">
+                  <Cart></Cart>
+                </div>
+              )}
             </div>
           </div>
 
           <div
             id="navbar-collapse-with-animation"
-            className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
+            className="hs-collapse pain hidden overflow-hidden relative transition-all duration-300 basis-full grow md:block"
           >
             <div className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:pl-7">
               {paths}
 
-              <div className="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] md:[--trigger:hover] md:py-4">
+              <div className="hs-dropdown relative z-50 [--strategy:static] md:[--strategy:fixed] [--adaptive:none] md:[--trigger:hover] md:py-4">
                 <button type="button" className="flex pb-1 items-center w-full">
                   Brands
                   <svg
@@ -133,7 +138,7 @@ const Navbar = () => {
                 </button>
 
                 <div
-                  className={`hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 md:w-48 hidden z-10  md:shadow-md rounded-lg p-2 ${
+                  className={`hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 md:w-48 hidden z-50  md:shadow-md rounded-lg p-2 ${
                     dark
                       ? "bg-gray-800 md:border border-gray-700 divide-gray-700"
                       : "bg-white"
@@ -235,10 +240,7 @@ const Navbar = () => {
                     <User></User>
                   </div>
                   <div>
-                    <div className=" md:hidden absolute right-28 top-4 ">
-                      <Cart></Cart>
-                    </div>
-                    <label className="absolute right-16 top-4   md:hidden z-50 swap swap-rotate">
+                    <label className="absolute right-2 top-4   md:hidden z-50 swap swap-rotate">
                       {/* this hidden checkbox controls the state */}
                       <input onClick={() => setDark(!dark)} type="checkbox" />
 
@@ -284,9 +286,11 @@ const Navbar = () => {
                     </svg>
                     Log in
                   </Link>
-                  <div className=" md:hidden absolute right-28 top-4 ">
-                    <Cart></Cart>
-                  </div>
+                  {user && (
+                    <div className=" md:hidden absolute right-28 top-0 ">
+                      <Cart></Cart>
+                    </div>
+                  )}
                   <label className="absolute right-16 top-4   md:hidden z-50 swap swap-rotate">
                     {/* this hidden checkbox controls the state */}
                     <input onClick={() => setDark(!dark)} type="checkbox" />

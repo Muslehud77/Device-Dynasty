@@ -80,19 +80,23 @@ const handleAddToCart = () =>{
 }
     
     return (
-      <div className="relative ">
-        <div className="flex z-10 container mx-auto relative my-10 flex-col-reverse">
+      <div
+        className={`relative h-full rounded-xl ${
+          !dark ? "bg-cyan-800" : "bg-black"
+        }  mt-10`}
+      >
+        <div className="flex z-10 py-10 container mx-auto relative my-10 flex-col-reverse">
           <div
             className={`container ${
-              !showFull && "h-screen"
+              !showFull && "md:h-screen"
             }   mx-auto px-4 sm:px-6 lg:px-8`}
           >
             <div className=" gap-4 md:gap-8 xl:gap-20 xl:items-center">
               <div className={`flex justify-center`}>
                 <img
                   className={`${
-                    !showFull && "left-52  bottom-28 xl:absolute"
-                  } duration-1000 w-[600px] object-top object-cover h-96 rounded-2xl  overflow-hidden `}
+                    !showFull && "left-52 bottom-28 xl:absolute"
+                  } duration-1000 w-[600px] mb-10 object-top object-cover h-96 rounded-2xl  overflow-hidden `}
                   src={photo}
                   alt="Image Description"
                 />
@@ -104,15 +108,25 @@ const handleAddToCart = () =>{
                       {brand} <span className="text-[#65C9C0]">{name}</span>
                     </h1>
                   </div>
-                  <p className="mt-3 text-white text-lg ">
-                    {showFull && description}
+                  <p className="mt-3  text-white text-lg ">
+                    {showFull && (
+                      <span>
+                        {description}{" "}
+                        <button
+                          onClick={() => setShowFull(!showFull)}
+                          className={`${!showFull && "hidden"} hover:font-bold`}
+                        >
+                          Read less
+                        </button>
+                      </span>
+                    )}
                     <p>
                       {!showFull && description.slice(0, 200)}
                       <button
                         onClick={() => setShowFull(!showFull)}
                         className={`${showFull && "hidden"} hover:font-bold`}
                       >
-                        ...Read More
+                        ...Read more
                       </button>{" "}
                     </p>
                   </p>
@@ -132,7 +146,8 @@ const handleAddToCart = () =>{
                           </div>
                         </div>
                         <div className="flex flex-row-reverse gap-3 mt-2">
-                          <Link onClick={goToTop}
+                          <Link
+                            onClick={goToTop}
                             to={`/edit-product/${brand}${_id}`}
                             className="text-xl p-0"
                           >
@@ -144,7 +159,8 @@ const handleAddToCart = () =>{
                         </div>
                       </div>
                       <div className="flex bg-gray-700 rounded-tl-2xl">
-                        <Link onClick={goToTop}
+                        <Link
+                          onClick={goToTop}
                           to={`/${brand}`}
                           className="btn rounded-none w-1/2 rounded-tl-xl h-full rounded-bl-none  btn-sm"
                         >
@@ -167,7 +183,7 @@ const handleAddToCart = () =>{
             </div>
           </div>
           <img
-            className="absolute h-screen md:h-[100%] w-full z-[-10] object-fill"
+            className="absolute top-0 opacity-50 h-full md:h-[100%] w-full z-[-10] object-cover"
             src={dark ? bg2 : bg}
             alt=""
           />

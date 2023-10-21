@@ -20,6 +20,10 @@ input::-webkit-inner-spin-button {
 
 }
 
+.pain{
+    position: relative;
+    z-index: 1000;
+}
 
 .swiper-slide {
   text-align: center;

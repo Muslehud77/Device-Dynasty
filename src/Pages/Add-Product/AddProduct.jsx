@@ -16,7 +16,7 @@ export default function AddProduct() {
     const price = form.price.value;
     const brand = form.brand.value;
    
-    const details = form.details.value;
+    const description = form.details.value;
     const photo = form.photo.value;
     const product = {
       name,
@@ -24,7 +24,7 @@ export default function AddProduct() {
       brand,
       rating,
       price,
-      details,
+      description,
       photo,
     };
    

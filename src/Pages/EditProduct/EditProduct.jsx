@@ -109,7 +109,7 @@ const {dark} = useContext(AuthContext)
         <p className="mt-2 text-lg leading-8 text-gray-600"></p>
       </div>
       <div>
-        <section className="p-6  ">
+        <section className="">
           <div className="container space-y-10 flex flex-col-reverse md:grid gap-6 mx-auto text-center lg:grid-cols-2 justify-center  xl:grid-cols-5">
             <div className="w-full px-6  rounded-md xl:col-span-3 ">
               <form
@@ -248,8 +248,8 @@ const {dark} = useContext(AuthContext)
                 </div>
               </form>
             </div>
-            <div className="col-span-2">
-              <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md ">
+            <div className="col-span-2  ">
+              <div className="max-w-2xl mt-16 border overflow-hidden bg-white rounded-lg shadow-md ">
                 <img
                   className="object-contain w-full h-64"
                   src={pPhoto}
