@@ -9,7 +9,8 @@ import { AuthContext } from "../ContextProvider/AuthContext";
 
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+
 
 
 
@@ -62,17 +63,8 @@ const handleCheckOut = () => {
           imageWidth: 200,
           imageHeight: 200,
           imageAlt: "Custom image",
-          confirmButtonText: "Okay!",
-        }).then((result) => {
-          /* Read more about isConfirmed, isDenied below */
-          if (result.isConfirmed) {
-            setState({
-  right: false,
-});
-            
-          } else if (result.isDenied) {
-            Swal.fire("Changes are not saved", "", "info");
-          }
+          showConfirmButton: false,
+          timer: 1500,
         });
         
       } 
@@ -80,8 +72,6 @@ const handleCheckOut = () => {
     });
 
 };
-
-console.log(state)
 
 
 
@@ -109,12 +99,15 @@ console.log(state)
         </div>
         <div className="flex justify-end space-x-4">
           <Link
-            to={"/"}
+            onClick={() =>
+              setState({
+                right: false,
+              })
+            }
             type="button"
-            className="px-6 py-2 border rounded-md dark:border-violet-400"
+            className="px-6 py-2 flex justify-center items-center gap-2 border rounded-md dark:border-violet-400"
           >
-            Back
-            <span className="sr-only sm:not-sr-only">to shop</span>
+            <p>Back to shop</p> <AiOutlineArrowRight />
           </Link>
           {cart.length > 0 && (
             <button
