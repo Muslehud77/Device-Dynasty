@@ -81,7 +81,7 @@ const handleAddToCart = () =>{
     
     return (
       <div
-        className={`relative h-full rounded-xl ${
+        className={`relative container mx-auto h-full rounded-xl ${
           !dark ? "bg-cyan-800" : "bg-black"
         }  mt-10`}
       >

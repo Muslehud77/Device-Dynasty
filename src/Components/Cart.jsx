@@ -6,7 +6,7 @@ import CartCard from "./CartCard";
 import {FaShoppingCart} from 'react-icons/fa'
 import { useContext } from "react";
 import { AuthContext } from "../ContextProvider/AuthContext";
-import { useEffect } from "react";
+
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -29,10 +29,10 @@ export default function Cart() {
 
 
  
-  const toggleDrawer = (anchor, open,type) => (event) => {
+  const toggleDrawer = (anchor, open) => (event) => {
     
     if (
-     ( event.type === "keydown" || type === 'click') &&
+     event.type === "keydown"  &&
       (event.key === "Tab" || event.key === "Shift")
     ) {
         
@@ -52,7 +52,9 @@ const handleCheckOut = () => {
     .then((data) => {
       if (data.deletedCount > 0) {
         fetchCart();
-        setShow(false)
+    setState({
+      right: false,
+    });
         Swal.fire({
           title:
             "Thank you for choosing Device Dynasty for your Device Needs!  ",
@@ -64,7 +66,10 @@ const handleCheckOut = () => {
         }).then((result) => {
           /* Read more about isConfirmed, isDenied below */
           if (result.isConfirmed) {
-            setShow(true);
+            setState({
+  right: false,
+});
+            
           } else if (result.isDenied) {
             Swal.fire("Changes are not saved", "", "info");
           }
@@ -73,14 +78,16 @@ const handleCheckOut = () => {
       } 
     
     });
+
 };
 
+console.log(state)
 
-const [show,setShow] = useState(true)
+
 
 
   const list = () => (
-    <Box className={`${show ? "" : "hidden"} `}>
+    <Box>
       <div
         className={`flex flex-col max-w-3xl p-6 space-y-4 sm:p-10 ${
           dark && "bg-gray-900 text-gray-100"
