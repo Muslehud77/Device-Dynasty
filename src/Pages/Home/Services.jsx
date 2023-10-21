@@ -9,7 +9,7 @@ import { TbShoppingCartDiscount } from "react-icons/tb";
 
 const Services = () => {
     return (
-      <div>
+      <div className='overflow-hidden'>
         <section className="m-4 md:m-8  ">
           <div
             data-aos="fade-up"

@@ -48,7 +48,7 @@ const Card = ({product,products,setProducts}) => {
       }
     
     return (
-      <div data-aos="fade-up" className="mb-5 ">
+      <div  className="mb-5 ">
         <div className="flex flex-col items-center justify-center w-96  mx-auto">
           <div
             className="w-full h-64 bg-gray-300 bg-center  bg-cover  rounded-lg shadow-md"

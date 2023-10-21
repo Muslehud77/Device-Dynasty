@@ -1,15 +1,15 @@
 import ReactPlayer from "react-player";
-import video1 from "../../Assets/samsung.webm";
+
 import video2 from "../../Assets/apple.mp4";
 
 import { useContext, useState } from "react";
 import { AuthContext } from "../../ContextProvider/AuthContext";
 
 const Banner = () => {
-    const [show,setShow] = useState(false)
+   
     const {dark} = useContext(AuthContext)
   return (
-    <div onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(!true)}>
+    <div>
       <div className="w-full rounded-xl overflow-hidden relative container mx-auto">
         <div className=" object-cover">
           <ReactPlayer
