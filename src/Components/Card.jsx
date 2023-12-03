@@ -5,11 +5,14 @@ import { AuthContext } from '../ContextProvider/AuthContext';
 import Rating from "@mui/material/Rating";
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Button, Tooltip } from '@mui/material';
 
 const Card = ({product,products,setProducts}) => {
-    const { dark, goToTop } = useContext(AuthContext);
+    const { dark, goToTop , user } = useContext(AuthContext);
     const {_id, brand, price,  name, rating, photo,productType } =
       product;
+
+      console.log(user);
 
       const handleDelete = () =>{
         Swal.fire({
@@ -21,16 +24,19 @@ const Card = ({product,products,setProducts}) => {
           cancelButtonColor: "#d33",
           confirmButtonText: "Yes, delete it!",
         }).then((result) => {
+        if (user.email === "fardinmohit@gmail.com") {
           if (result.isConfirmed) {
-            fetch(`https://device-dynasty-server-side.vercel.app/${brand}${_id}`, {
-              method: "DELETE",
-            })
+            fetch(
+              `https://device-dynasty-server-side.vercel.app/${brand}${_id}`,
+              {
+                method: "DELETE",
+              }
+            )
               .then((res) => res.json())
               .then((data) => {
-                if (data.deletedCount ===1) {
-
-                    const productsToShow = products.filter(p=>p._id !== _id)
-                    setProducts(productsToShow)
+                if (data.deletedCount === 1) {
+                  const productsToShow = products.filter((p) => p._id !== _id);
+                  setProducts(productsToShow);
 
                   Swal.fire(
                     "Deleted!",
@@ -38,18 +44,23 @@ const Card = ({product,products,setProducts}) => {
                     "success"
                   );
                 }
-
-                (data);
               });
           }
+        } else {
+          Swal.fire({
+            icon: "error",
+
+            text: "You dont have the authorization!",
+          });
+        }
         });
 
      
       }
     
     return (
-      <div  className="mb-5 ">
-        <div className="flex flex-col items-center justify-center w-96  mx-auto">
+      <div className="mb-5 ">
+        <div className="flex  duration-500 transition-all md:hover:scale-110 ease-in-out flex-col items-center justify-center w-80  mx-auto">
           <div
             className="w-full h-64 bg-gray-300 bg-center  bg-cover  rounded-lg shadow-md"
             style={{ backgroundImage: `url(${photo})` }}
@@ -86,26 +97,32 @@ const Card = ({product,products,setProducts}) => {
             >
               <span className="font-bold ">${price}</span>
               <div className="flex flex-row-reverse gap-3">
-                <Link onClick={goToTop}
+                <Link
+                  onClick={goToTop}
                   to={`/details/${brand}${_id}`}
                   className="btn btn-outline p-1 btn-sm border rounded-lg "
                 >
                   Details
                 </Link>
 
-                <div className="mt-1.5 tooltip" data-tip="hello">
-                  <Link onClick={goToTop}
+                <div className="mt-1.5 ">
+                  <Link
+                    onClick={goToTop}
                     to={`/edit-product/${brand}${_id}`}
                     className="text-xl p-0"
                   >
-                    <BiEditAlt />
+                    <Tooltip placement="top" title="Edit" variant="outlined">
+                      <button>
+                        <BiEditAlt />
+                      </button>
+                    </Tooltip>
                   </Link>
                 </div>
-                <button onClick={handleDelete} className="text-xl">
-                  <div data-tip="Edit Item" className="mt-1.5 tooltip">
+                <Tooltip placement="top" title="Delete?" variant="outlined">
+                  <button onClick={handleDelete} className="text-xl mt-1">
                     <AiFillDelete />
-                  </div>
-                </button>
+                  </button>
+                </Tooltip>
               </div>
             </div>
           </div>

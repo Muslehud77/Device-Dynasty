@@ -89,21 +89,22 @@ const handleAddToCart = () =>{
           <div
             className={`container ${
               !showFull && "md:h-screen"
-            }   mx-auto px-4 sm:px-6 lg:px-8`}
+            }  transition-all mx-auto px-4 sm:px-6 lg:px-8`}
           >
             <div className=" gap-4 md:gap-8 xl:gap-20 xl:items-center">
               <div className={`flex justify-center`}>
                 <img
                   className={`${
-                    !showFull && "left-52 bottom-28 xl:absolute"
-                  } duration-1000 w-[600px] mb-10 object-top object-cover h-96 rounded-2xl  overflow-hidden `}
+                    !showFull &&
+                    "left-52 bottom-28 xl:absolute"
+                  } duration-1000 transition-all hover:scale-110 ease-in-out w-[600px] mb-10 object-top object-cover h-96 rounded-2xl  overflow-hidden `}
                   src={photo}
                   alt="Image Description"
                 />
               </div>
               <div className="flex justify-center items-center">
                 <div className="w-full container">
-                  <div className="bg-black text-white p-5 rounded-2xl">
+                  <div className="drop-shadow-2xl shadow-xl backdrop-blur-xl backdrop-brightness-75 text-white p-5 rounded-2xl">
                     <h1 className="block text-left text-3xl font-bold  sm:text-4xl lg:text-6xl lg:leading-tight">
                       {brand} <span className="text-[#65C9C0]">{name}</span>
                     </h1>

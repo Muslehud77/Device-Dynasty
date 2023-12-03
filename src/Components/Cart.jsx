@@ -98,7 +98,7 @@ const handleCheckOut = () => {
           </p>
         </div>
         <div className="flex justify-end space-x-4">
-          <Link
+          <button
             onClick={() =>
               setState({
                 right: false,
@@ -108,7 +108,7 @@ const handleCheckOut = () => {
             className="px-6 py-2 flex justify-center items-center gap-2 border rounded-md dark:border-violet-400"
           >
             <p>Back to shop</p> <AiOutlineArrowRight />
-          </Link>
+          </button>
           {cart.length > 0 && (
             <button
               onClick={() => handleCheckOut()}
